@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Task Manager</h1>
+  </header>
+
+  <div class="container">
+    <div class="section" id="open-section">
+      <h2>Open &#x1F4DD;</h2>
+      <div class="task-list" id="open-tasks" ondrop="drop(event, 'open')" ondragover="allowDrop(event)">
+      </div>
+      <div class="add-task">
+        <input type="text" id="task-input" placeholder="Enter task name">
+        <button id="add-task-btn" onclick="addTask()">Add Task</button>
+      </div>
+    </div>
+
+    <div class="section" id="in-progress-section">
+      <h2>In Progress &#9997;</h2>
+      <div class="task-list" id="in-progress-tasks" ondrop="drop(event, 'in-progress')" ondragover="allowDrop(event)">
+      </div>
+    </div>
+
+    <div class="section" id="in-review-section">
+      <h2>In Review &#x1F50E;</h2>
+      <div class="task-list" id="in-review-tasks" ondrop="drop(event, 'in-review')" ondragover="allowDrop(event)">
+      </div>
+    </div>
+
+    <div class="section" id="done-section">
+      <h2>Done &#9989;</h2>
+      <div class="task-list" id="done-tasks" ondrop="drop(event, 'done')" ondragover="allowDrop(event)">
+      </div>
+    </div>
+  </div>
+
+  <div id="task-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()"><span>x</span>
+    </span>
+      <h3>Task Details</h3>
+      <textarea id="task-description" placeholder="Enter task description"></textarea>
+      <div class="btn-group">
+        <button id="save-description" onclick="saveDescription()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Task Manager by Vinay Wasnik</p>
+  </footer>
+
+  <script src="App.js"></script>
+</body>
+</html>
+
